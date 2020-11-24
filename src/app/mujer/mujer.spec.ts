@@ -1,6 +1,13 @@
 import {mujer} from './mujer';
+import {edadmujer} from './mujer';
 
 describe('mujer issue test', () => {
+
+  it ( 'Recibe edad', () => {
+    let result = 0;
+    result = edadmujer(19);
+    expect(result).toBe(19);
+  });
 
   it('Recibe peso y estatura', () => {
     let result: number | string = 0;

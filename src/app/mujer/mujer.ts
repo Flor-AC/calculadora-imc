@@ -1,3 +1,21 @@
+export function  edadmujer(edad){
+  return edad;
+
+  if (edad >= 16 && edad <= 24){
+    return 'Peso ideal 19 - 24 Kg/m²';
+  } else if (edad >= 25 && edad <= 34){
+    return 'Peso ideal 20 - 25 kg/m²';
+  } else if (edad >= 35 && edad <= 44){
+    return 'Peso ideal 21 - 26 kg/m²';
+  } else if (edad >= 45 && edad <= 54){
+    return 'Peso ideal 22 - 27 kg/m²';
+  } else if (edad >= 55 && edad <= 64){
+    return 'Peso ideal 23 - 28 kg/m²';
+  } else if (edad >= 65 && edad <= 90){
+    return 'Peso ideal 25 - 30 kg/m²';
+  }
+}
+
 export function  mujer(peso, estatura){
     let estatura2 = 0;
     let imc = 0;
