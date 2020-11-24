@@ -1,4 +1,4 @@
-# Documentation
+# Documentación, Mokups y diagrama de clases.
 
 https://github.com/Dantesnake/Doc-IMC
 
