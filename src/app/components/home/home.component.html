@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand navbar-tittle">Calculadora de Índice Masa Corporal</a>
+</nav>
+
+<div class="jumbotron container-xl">
+  <h2 class="display-4">Ingrese sus datos</h2>
+  <div class="form-group">
+    <div class="form-group has-danger">
+      <h5><label class="form-control-label">Genero (Femenino/Masculino)</label></h5>
+      <div class="custom-control custom-radio">
+        <input [(ngModel)]="generoM" type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Femenino</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input [(ngModel)]="generoF" type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Masculino</label>
+      </div>
+    </div>
+
+    <div class="form-group has-danger">
+      <h5><label class="form-control-label">Estatura (Metros)</label></h5>
+      <input [(ngModel)]="estatura" type="text" class="form-control">
+    </div>
+    <div class="form-group has-danger">
+      <h5><label class="form-control-label">Peso (Kilogramos)</label></h5>
+      <input [(ngModel)]="peso" type="text" class="form-control">
+    </div>
+
+    <div class="form-group has-danger">
+      <h5><label class="form-control-label">Edad (Años)</label></h5>
+      <input [(ngModel)]="edad" type="text" class="form-control">
+    </div>
+    <button data-toggle="modal" (click)="imcresultado()"
+            data-target= "#abrirModal" type="button" class="btn btn-primary btn-lg btn-block">Calcular el IMC</button>
+  </div>
+</div>
+
+<div class="modal" id = "abrirModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resultados de IMC</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Peso: {{peso}} <br> Altura: {{estatura}}<br> IMC: {{imc}}</p>
+      </div>
+      <div class="modal-body">
+        <p>Índice de Masa Corporal<br>Peso (kg) / Estatura (m)²</p>
+      </div>
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">IMC</th>
+          <th scope="col">Nombre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+          <tr>Menos de 18.4</tr>
+          <tr>De 18.5 a 24.9</tr>
+          <tr>De 25 a 29.9</tr>
+          <tr>De 30 a 34.9</tr>
+          <tr>De 35 a 39.9</tr>
+          <tr>Más de 40</tr>
+        </td>
+        <td>
+          <tr>Bajo Peso</tr>
+          <tr>Normal</tr>
+          <tr>Sobre Peso</tr>
+          <tr>Grado de Obesidad I</tr>
+          <tr>Grado de Obesidad II</tr>
+          <tr>Grado de Obesidad III</tr>
+        </td>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">  Hombre</th>
+          <th scope="col"> </th>
+          <th scope="col"> </th>
+          <th scope="col">  Mujer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>kg</td>
+          <td>cm</td>
+          <td>kg</td>
+          <td>cm</td>
+        </tr>
+        <tr>
+          <td>{{pesoIdeal}}</td>
+          <td>{{estatura}}</td>
+          <td>{{pesoIdeal}}</td>
+          <td>{{estatura}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
