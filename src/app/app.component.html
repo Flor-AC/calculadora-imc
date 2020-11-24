@@ -1,3 +1,117 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand">Calculadora de Índice Masa Corporal</a>
+  <a class="navbar-brand navbar-tittle">Calculadora de Índice Masa Corporal</a>
 </nav>
+
+<div class="jumbotron container-sm">
+  <h2 class="display-4">Ingrese sus datos</h2>
+   <div class="form-group">
+     <div class="form-group has-danger">
+       <h5><label class="form-control-label">Genero (Femenino/Masculino)</label></h5>
+       <div class="custom-control custom-radio">
+         <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked="">
+         <label class="custom-control-label" for="customRadio1">Femenino</label>
+       </div>
+       <div class="custom-control custom-radio">
+         <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+         <label class="custom-control-label" for="customRadio2">Masculino</label>
+       </div>
+     </div>
+
+     <div class="form-group has-danger">
+       <h5><label class="form-control-label">Estatura (Metros)</label></h5>
+       <input type="text" class="form-control">
+     </div>
+     <div class="form-group has-danger">
+       <h5><label class="form-control-label">Peso (Kilogramos)</label></h5>
+       <input type="text" class="form-control">
+     </div>
+
+    <div class="form-group has-danger">
+      <h5><label class="form-control-label">Edad (Años)</label></h5>
+      <input type="text" class="form-control">
+    </div>
+     <button data-toggle="modal"
+             data-target= "#abrirModal" type="button" class="btn btn-primary btn-lg btn-block">Calcular el IMC</button>
+  </div>
+</div>
+
+<div class="modal" id = "abrirModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resultados de IMC</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Peso: <br> Altura: <br> IMC:</p>
+      </div>
+      <div class="modal-body">
+        <p>Índice de Masa Corporal<br>Peso (kg) / Estatura (m)²</p>
+      </div>
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">IMC</th>
+          <th scope="col">Nombre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+          <tr>Menos de 18.4</tr>
+          <tr>De 18.5 a 24.9</tr>
+          <tr>De 25 a 29.9</tr>
+          <tr>De 30 a 34.9</tr>
+          <tr>De 35 a 39.9</tr>
+          <tr>Más de 40</tr>
+        </td>
+        <td>
+          <tr>Bajo Peso</tr>
+          <tr>Normal</tr>
+          <tr>Sobre Peso</tr>
+          <tr>Grado de Obesidad I</tr>
+          <tr>Grado de Obesidad II</tr>
+          <tr>Grado de Obesidad III</tr>
+        </td>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col">  Hombre</th>
+          <th scope="col"> </th>
+          <th scope="col"> </th>
+          <th scope="col">  Mujer</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>cm</td>
+          <td>kg</td>
+          <td>cm</td>
+          <td>kg</td>
+        </tr>
+        <tr>
+          <td>160</td>
+          <td>61.0</td>
+          <td>160</td>
+          <td>58.0</td>
+        </tr>
+        <tr>
+          <td>161</td>
+          <td>61.9</td>
+          <td>161</td>
+          <td>58.9</td>
+        </tr>
+        <tr>
+          <td>162</td>
+          <td>62.9</td>
+          <td>162</td>
+          <td>59.8</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
