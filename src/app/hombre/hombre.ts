@@ -1,85 +1,35 @@
-export function Hombre(estatura: number, peso: number) {
-    const IMC = peso / (estatura * estatura);
-    IMC.toFixed(2);
-    let rest;
-    if (IMC < 20) {
-        rest = `peso bajo`;
-    } else {if (IMC >= 20 && IMC <= 27) {
-            rest = `peso normal`;
-        } else {if (IMC >= 27 && IMC <= 30) {
-            rest = `sobrepeso`;
-            } else {if (IMC >= 30 && IMC <= 35) {
-                    rest = `obesidad grado 1`;
-                } else {if (IMC >= 35 && IMC <= 40) {
-                        rest = `obesidad grado 2`;
-                    } else {rest = `obesidad grado 3 (obesidad mórbida)`;
-                    }
-                }
-            }
-        }
-    }
-    return 'IMC: ' + IMC.toFixed(2) + ', ' + rest;
-    }
+export function  edadhombre(edad){
 
-export function pesoMin(edad: number, estatura: number){
-    let rest: number;
-  // tslint:disable-next-line:triple-equals
-    if (edad == 16) {
-        rest = (estatura * estatura) * 19;
-      // tslint:disable-next-line:triple-equals
-    } else {if (edad == 17 || edad == 18) {
-            rest = (estatura * estatura) * 20;
-        } else {if (edad >= 19 && edad <= 24) {
-                rest = (estatura * estatura) * 21;
-            } else {if (edad >= 25 && edad <= 34) {
-                    rest = (estatura * estatura) * 22;
-                } else {if (edad >= 35 && edad <= 54) {
-                        rest = (estatura * estatura) * 23;
-                    } else {if (edad >= 55 && edad <= 64) {
-                            rest = (estatura * estatura) * 24;
-                        } else {if (edad >= 65 && edad <= 90) {
-                                rest = (estatura * estatura) * 25;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    return rest.toFixed(2) + ' kg';
+  if (edad >= 16 && edad <= 24){
+    return 'Peso ideal 19 - 24 Kg/m²';
+  } else if (edad >= 25 && edad <= 34){
+    return 'Peso ideal 20 - 25 kg/m²';
+  } else if (edad >= 35 && edad <= 44){
+    return 'Peso ideal 21 - 26 kg/m²';
+  } else if (edad >= 45 && edad <= 54){
+    return 'Peso ideal 22 - 27 kg/m²';
+  } else if (edad >= 55 && edad <= 64){
+    return 'Peso ideal 23 - 28 kg/m²';
+  } else if (edad >= 65 && edad <= 90){
+    return 'Peso ideal 25 - 30 kg/m²';
+  }
 }
 
-export function pesoMax(edad: number, estatura: number){
-    let rest: number;
-  // tslint:disable-next-line:triple-equals
-    if (edad == 16) {
-        rest = (estatura * estatura) * 24;
-    } else {
-      // tslint:disable-next-line:triple-equals
-        if (edad == 17 || edad == 18) {
-            rest = (estatura * estatura) * 25;
-        } else {
-            if (edad >= 19 && edad <= 24) {
-                rest = (estatura * estatura) * 26;
-            } else {
-                if (edad >= 25 && edad <= 34) {
-                    rest = (estatura * estatura) * 27;
-                } else {
-                    if (edad >= 35 && edad <= 54) {
-                        rest = (estatura * estatura) * 38;
-                    } else {
-                        if (edad >= 55 && edad <= 64) {
-                            rest = (estatura * estatura) * 29;
-                        } else {if (edad >= 65 && edad <= 90) {
-                                rest = (estatura * estatura) * 30;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return rest.toFixed(2) + ' kg';
+export function  hombre(peso, estatura){
+  let imc = 0;
+  imc = peso / (estatura * estatura);
 
+  if (imc <= 18.4){
+    return 'Bajo Peso';
+  } else if (imc >= 18.5 && imc <= 24.9 ){
+    return 'Normal';
+  } else if (imc >= 25 && imc <= 29.9){
+    return 'Sobre Peso';
+  } else if (imc >= 30 && imc <= 34.9){
+    return 'Grado de Obesidad I';
+  } else if (imc >= 35 && imc <= 39.9){
+    return 'Grado de Obesidad II';
+  } else if (imc >= 40) {
+    return 'Grado de Obesidad III';
+  }
 }

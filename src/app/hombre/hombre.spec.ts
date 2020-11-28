@@ -1,42 +1,80 @@
-import { Hombre, pesoMax, pesoMin } from './hombre';
+import {hombre} from './hombre';
+import {edadhombre} from './hombre';
+
+describe('hombre issue test', () => {
+
+  it ('Recibe edad 19 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(19);
+    expect(result).toBe('Peso ideal 19 - 24 Kg/m²');
+  });
+
+  it ('Recibe edad 26 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(26);
+    expect(result).toBe('Peso ideal 20 - 25 kg/m²');
+  });
+
+  it ('Recibe edad 26 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(41);
+    expect(result).toBe('Peso ideal 21 - 26 kg/m²');
+  });
+
+  it ('Recibe edad 52 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(52);
+    expect(result).toBe('Peso ideal 22 - 27 kg/m²');
+  });
+
+  it ('Recibe edad 56 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(56);
+    expect(result).toBe('Peso ideal 23 - 28 kg/m²');
+  });
+
+  it ('Recibe edad 80 para eso ideal', () => {
+    let result = '';
+    result = edadhombre(80);
+    expect(result).toBe('Peso ideal 25 - 30 kg/m²');
+  });
 
 
-describe('Hombre uni tests', () => {
 
-    it('Recibo estatura de 1.80, peso de 80 Devuelve IMC de 24.69, peso normal' , () => {
-        let result = '';
-        result = Hombre(1.80, 80);
-        expect(result).toBe('IMC: 24.69, peso normal');
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 41, 1.60);
+    expect(result).toBe('Bajo Peso');
+  });
 
-    });
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 51.600, 1.61);
+    expect(result).toBe('Normal');
+  });
 
-    it('Recibo la estatura de 1.80 y edad 28 tiene un Rango de peso 71.28 kg - 87.48 kg' , () => {
-        let result = '';
-        result = 'Rango de peso ' + pesoMin(28, 1.80) + ' - ' + pesoMax(28, 1.80);
-        expect(result).toBe('Rango de peso 71.28 kg - 87.48 kg');
-    });
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 77.7, 1.72);
+    expect(result).toBe('Sobre Peso');
+  });
 
-    it('Recibo estatura de 1.50, peso de 45 Devuelve IMC de 20.00, peso normal' , () => {
-        let result = '';
-        result = Hombre(1.50, 45);
-        expect(result).toBe('IMC: 20.00, peso normal');
-    });
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 88, 1.70);
+    expect(result).toBe('Grado de Obesidad I');
+  });
 
-    it('Recibo la estatura de 1.50 y edad 48 tiene un Rango de peso 51.75 kg - 85.50 kg' , () => {
-        let result = '';
-        result = 'Rango de peso ' + pesoMin(48, 1.50) + ' - ' + pesoMax(48, 1.50);
-        expect(result).toBe('Rango de peso 51.75 kg - 85.50 kg');
-    });
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 112.5, 1.70);
+    expect(result).toBe('Grado de Obesidad II');
+  });
 
-    it('Recibo estatura de 1.90, peso de 80 Devuelve IMC de 22.16, peso normal' , () => {
-        let result = '';
-        result = Hombre(1.90, 80);
-        expect(result).toBe('IMC: 22.16, peso normal');
-    });
-
-    it('Recibo la estatura de 1.90 y edad 25 tiene un Rango de peso 79.42 kg - 97.47 kg' , () => {
-        let result = '';
-        result = 'Rango de peso ' + pesoMin(25, 1.90) + ' - ' + pesoMax(25, 1.90);
-        expect(result).toBe('Rango de peso 79.42 kg - 97.47 kg');
-    });
+  it('Recibe peso y estatura', () => {
+    let result: number | string = 0;
+    result = hombre ( 115.5, 1.68);
+    expect(result).toBe('Grado de Obesidad III');
+  });
 });
+
