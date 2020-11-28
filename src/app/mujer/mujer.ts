@@ -1,5 +1,4 @@
 export function  edadmujer(edad){
-  return edad;
 
   if (edad >= 16 && edad <= 24){
     return 'Peso ideal 19 - 24 Kg/m²';
@@ -17,11 +16,8 @@ export function  edadmujer(edad){
 }
 
 export function  mujer(peso, estatura){
-    let estatura2 = 0;
     let imc = 0;
-    estatura2 = estatura * estatura;
-    imc = peso / estatura2;
-    return imc.toFixed(1);
+    imc = peso / (estatura * estatura);
 
     if (imc <= 18.4){
       return 'Bajo Peso';
