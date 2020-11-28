@@ -1,5 +1,4 @@
-import {mujer} from './mujer';
-import {edadmujer} from './mujer';
+import {mujer, edadmujer} from './mujer';
 
 describe('mujer issue test', () => {
 

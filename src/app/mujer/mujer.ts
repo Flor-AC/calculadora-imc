@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 export function  edadmujer(edad){
 
   if (edad >= 16 && edad <= 24){
@@ -36,4 +33,3 @@ export function  mujer(peso, estatura){
       return 'Grado de Obesidad III';
     }
 }
->>>>>>> release
