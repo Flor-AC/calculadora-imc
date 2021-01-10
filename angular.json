@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "calculadora-imc"
+    }
+  },
+  "defaultProject": "calculadora-imc",
+  "cli": {
+    "analytics": "78a0971b-2539-4aa0-812d-15203d880530"
+  }
 }
