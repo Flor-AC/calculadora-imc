@@ -10,11 +10,11 @@ import {environment} from '../../environments/environment';
 })
 export class PersonaService {
 
-  apiUrl = 'http://localhost:8080';
+  apiUrl = 'https://api-calculadoraimc.herokuapp.com';
 
   httpOptions = {
     headers: new HttpHeaders({
-      Authorization: 'Bearer ' + environment.token,
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
       Accept: 'application/json'
@@ -29,7 +29,6 @@ export class PersonaService {
   }
 
   getAll() {
-    console.log(environment.token);
     return this.http.get(this.apiUrl + '/persona', this.httpOptions).pipe(retry(1), catchError(this.handleError));
   }
 

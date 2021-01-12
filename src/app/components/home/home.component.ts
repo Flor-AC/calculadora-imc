@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
           console.log('Se accedio correctamente');
           this.btnHistorial = true;
           this.btnNavbar = false;
-          environment.token = res.message;
+          localStorage.setItem('token', res.message);
         }
       }
     });
@@ -137,6 +137,7 @@ export class HomeComponent implements OnInit {
 
     this.persona.edadPersona = this.edad;
     this.persona.estaturaPersona = this.estatura;
+    this.persona.imcPersona = this.imc;
     if (this.generoF) {
       this.persona.generoPersona = 'Femenino';
     } else {

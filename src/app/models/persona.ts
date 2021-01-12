@@ -4,4 +4,5 @@ export class Persona {
   estaturaPersona: string;
   pesoPersona: string;
   edadPersona: string;
+  imcPersona: string;
 }

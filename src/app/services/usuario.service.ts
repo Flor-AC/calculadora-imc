@@ -9,7 +9,7 @@ import {Usuario} from '../models/usuario';
 })
 export class UsuarioService {
 
-  apiUrl = 'http://localhost:8080';
+  apiUrl = 'https://api-calculadoraimc.herokuapp.com';
 
   httpOptionsJSON = {
     headers: new HttpHeaders({
