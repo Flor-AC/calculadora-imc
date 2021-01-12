@@ -6,3 +6,9 @@
   position: relative;
 }
 
+nav div{
+  font-size: 10px;
+  float: right;
+  left: 50%;
+  padding: 5px;
+}

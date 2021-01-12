@@ -1,5 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand navbar-tittle">Calculadora de Índice Masa Corporal</a>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <button data-toggle="modal"
+              data-target= "#abrirRegistro" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Regístrarse</button>
+      <button data-toggle="modal"
+              data-target= "#abrirIniciar" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Iniciar Sesión</button>
+    </ul>
+  </div>
 </nav>
 
 <div class="jumbotron container-xl">
@@ -30,12 +39,75 @@
       <h5><label class="form-control-label">Edad (Años)</label></h5>
       <input [(ngModel)]="edad" type="text" class="form-control">
     </div>
+<<<<<<< HEAD
     <!--button data-toggle="modal" (click)="imcresultado()"
             data-target= "#abrirModal" type="button" class="btn btn-primary btn-lg btn-block">Calcular el IMC</button-->
+=======
+    <button data-toggle="modal" (click)="imcresultado()"
+            data-target= "#abrirCalcular" type="button" class="btn btn-primary btn-lg btn-block">Calcular el IMC</button>
+    <button data-toggle="modal" (click)="historial()"
+            data-target= "#abrirHistorial" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnHistorial">Historial</button>
   </div>
 </div>
 
-<div class="modal" id = "abrirModal" tabindex="-1">
+<div class="modal" id = "abrirRegistro" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Regístrarse</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div>
+        <form>
+          <div class="modal-body">
+              <label for="email">Correo Electronico</label>
+              <input [(ngModel)]="this.usuario.username" name="username" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email@gmail.com">
+              <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+          </div>
+          <div class="modal-body">
+              <label for="password1">Contraseña</label>
+              <input [(ngModel)]="this.usuario.password" name="password" type="password" class="form-control" id="password1">
+            </div>
+          <div class="modal-body">
+            <button (click)="registrarse()" type="button" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id = "abrirIniciar" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Iniciar Sesión</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div>
+        <form>
+          <div class="modal-body">
+            <label for="correoElectronico">Correo Electronico</label>
+            <input [(ngModel)]="username" name="username" type="email" class="form-control" id="correoElectronico" aria-describedby="emailHelp" placeholder="email@gmail.com">
+          </div>
+          <div class="modal-body">
+            <label for="password1">Contraseña</label>
+            <input [(ngModel)]="password" name="password" type="password" class="form-control" id="contraseña">
+          </div>
+          <div class="modal-body">
+            <button (click)="login()" type="button" class="btn btn-primary">Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+>>>>>>> develop
+  </div>
+</div>
+
+
+<div class="modal" id = "abrirCalcular" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -77,30 +149,62 @@
       </table>
 
       <div class="modal-body">
-        <p>Peso Ideal según tu edad</p>
+        <p>IMC Ideal según tu Edad y Peso Ideal según tu Estatura</p>
       </div>
       <table class="table">
         <thead class="thead-light">
         <tr>
-          <th scope="col">  Hombre</th>
-          <th scope="col"> </th>
-          <th scope="col"> </th>
-          <th scope="col">  Mujer</th>
+          <th scope="col">  IMC</th>
+          <th scope="col">  Años</th>
+          <th scope="col">  Kilogramos</th>
+          <th scope="col">  Metros</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>kg</td>
-          <td>m</td>
-          <td>kg</td>
-          <td>m</td>
+          <td>{{imcIdeal}}</td>
+          <td>{{edad}}</td>
+          <td>{{pesoIdeal}}</td>
+          <td>{{estatura}}</td>
         </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id = "abrirHistorial" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">n
+        <h5 class="modal-title">Historial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <table class="table">
+        <thead class="thead-light">
         <tr>
-          <td>{{pesoIdeal}}</td>
-          <td>{{estatura}}</td>
-          <td>{{pesoIdeal}}</td>
-          <td>{{estatura}}</td>
+          <th scope="col">Estatura</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Edad</th>
+          <th scope="col">IMC</th>
+
         </tr>
+        </thead>
+        <tbody *ngFor="let persona of personas">
+
+        <td>
+          <tr>{{persona.estaturaPersona}}</tr>
+        </td>
+        <td>
+          <tr>{{persona.pesoPersona}}</tr>
+        </td>
+        <td>
+          <tr>{{persona.edadPersona}}</tr>
+        </td>
+        <td>
+          <tr>{{persona.imcPersona}}</tr>
+        </td>
         </tbody>
       </table>
     </div>
