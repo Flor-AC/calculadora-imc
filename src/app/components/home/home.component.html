@@ -1,12 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand navbar-tittle">Calculadora de Índice Masa Corporal</a>
 
-  <div class="collapse navbar-collapse" id="navbarColor01">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Calcular Índice de Masa Corporal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <button data-toggle="modal"
-              data-target= "#abrirRegistro" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Regístrarse</button>
-      <button data-toggle="modal"
-              data-target= "#abrirIniciar" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Iniciar Sesión</button>
+      <li class="nav-item active"><button data-toggle="modal"
+                                          data-target= "#abrirIniciar" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Iniciar Sesión</button>
+      </li>
+      <li class="nav-item"><button data-toggle="modal"
+                                   data-target= "#abrirRegistro" type="button" class="btn btn-primary btn-lg btn-block" *ngIf="this.btnNavbar">Regístrarse</button>
+      </li>
     </ul>
   </div>
 </nav>
