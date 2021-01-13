@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {UsuarioService} from './services/usuario.service';
 import {PersonaService} from './services/persona.service';
 import {HttpClientModule} from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     imports: [
         BrowserModule,
         FormsModule,
-      HttpClientModule
+      HttpClientModule,
+      NgbModule
     ],
   providers: [UsuarioService, PersonaService],
   bootstrap: [AppComponent]

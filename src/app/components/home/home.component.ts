@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   username: string;
   password: string;
 
+  public isMenuCollapsed = true;
+
   btnNavbar: boolean;
   btnHistorial: boolean;
 
