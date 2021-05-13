@@ -67,7 +67,6 @@ export class HomeComponent implements OnInit {
     this.usarioService.register(this.usuario).subscribe(
       (result: any) => {
         console.log('Se registro correctamente');
-        $('#abrirRegistro').modal('hide');
       },
       error => {
         console.log(error);

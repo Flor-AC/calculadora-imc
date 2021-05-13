@@ -9,7 +9,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HomeComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,4 +21,11 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it ('Cuando es hombre o es mujer', () => {
+    let result = '';
+    result = constructor(F);
+    expect(result).toBe('Peso ideal 19 - 24 Kg/m²');
+  });
+
 });
